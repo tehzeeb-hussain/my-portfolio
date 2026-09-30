@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    @apply bg-studio-bg text-slate-400 antialiased selection:bg-studio-primary/20 selection:text-white;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-24 md:py-40 px-6 md:px-16;
+  }
+
+  .btn-studio {
+    @apply px-10 py-4 bg-studio-primary text-black font-extrabold uppercase tracking-widest rounded-full 
+           hover:bg-white hover:scale-105 active:scale-95 transition-all duration-500 shadow-xl shadow-studio-primary/20;
+  }
+
+  .studio-card {
+    @apply p-10 bg-studio-card border border-white/5 rounded-[2.5rem] hover:border-studio-primary/50 transition-all duration-700;
+  }
+
+  .gradient-heading {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-studio-primary to-orange-400;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-studio-bg;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-white/5 rounded-full hover:bg-studio-primary/50 transition-all;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+  color: transparent;
+}
